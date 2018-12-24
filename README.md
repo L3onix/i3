@@ -48,3 +48,36 @@ $xdg-user-dirs-update
 
 + Removendo tempo de espera do grub
 #vim /etc/default/grub
+
++ Instalando drivers de vídeo e bumblebee
+#pacman -S xf86-video-intel
+#pacman -S mesa-demos
+#pacman -S nvidia-lts
+#pacman -S bumblebee
+#gpasswd -a l3onix bumblebee
+#systemctl enable bumblebee
+#optirun glxspheres64	(para testar)
+
++ Controle de brilho
+#pacman -S xorg-xbacklight
+#vim /etc/X11/xorg.conf.d/20-intel.conf
+----------------------------------------------
+Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
+----------------------------------------------
+#reboot
+
++ Controle de monitor
+#pacman -S arandr
+
++ Controle do touchpad
+#pacman -S xf86-input-synaptics
+#vim /usr/share/X11/xorg.conf.d
+-----------------------------------
+    Option	"TapButton1"	"1"
+    Option	"TapButton2"	"3"
+    Option	"TapButton3"	"2"
+-----------------------------------
