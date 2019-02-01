@@ -25,8 +25,14 @@ $xdg-user-dirs-update
 + Instalando compositor de telas
 #pacman -S compton
 
++ Instalando VIM
+#pacman -S vim
+
 + Instalando launcher rofi
 #pacman -S rofi
+
++ Instalando lxappearance
+#pacman -S lxappearance
 
 + Instalando visualizador de imagem e wallpaper
 #pacman -S feh
@@ -36,6 +42,8 @@ $xdg-user-dirs-update
 
 + Instalando navegador de pastas
 #pacman -S ranger
+$yay thunar
+#pacman -S gvfs
 
 + Instalando Firefox-Dev
 #pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br
@@ -54,6 +62,7 @@ $xdg-user-dirs-update
 #pacman -S mesa-demos
 #pacman -S nvidia-lts
 #pacman -S bumblebee
+#pacman -S primus
 #gpasswd -a l3onix bumblebee
 #systemctl enable bumblebee
 #optirun glxspheres64	(para testar)
@@ -75,9 +84,15 @@ EndSection
 
 + Controle do touchpad
 #pacman -S xf86-input-synaptics
-#vim /usr/share/X11/xorg.conf.d
+#vim /usr/share/X11/xorg.conf.d/70-synaptics.conf
 -----------------------------------
     Option	"TapButton1"	"1"
     Option	"TapButton2"	"3"
     Option	"TapButton3"	"2"
 -----------------------------------
+
++ Configuração de programas padrões
+#pacman -S xdg-utils
+
++ Sensores de temperatura 
+#pacman -S lm_sensors
