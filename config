@@ -1,81 +1,49 @@
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                                                                               #
-#                                                                                                               #
-#               ██╗██████╗ ██╗    ██╗███╗   ███╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗              #
-#               ██║╚════██╗██║    ██║████╗ ████║    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝              #
-#               ██║ █████╔╝██║ █╗ ██║██╔████╔██║    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗             #
-#               ██║ ╚═══██╗██║███╗██║██║╚██╔╝██║    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║             #
-#               ██║██████╔╝╚███╔███╔╝██║ ╚═╝ ██║    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝             #
-#               ╚═╝╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝              #
-#                                                                                                               #
-#                                                                                                               #
-#                                            BY: LEONARDO | L3ONIX	                                        #
-#                                                                                                               #
-#                                                                                                               #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#--------------------------------------------------
+#
+#	Configs i3wm - L3onix
+#
+#--------------------------------------------------
 
-
-
-##======================================================================================
-##======================================================================================
-# MOD KEY
-
+#> MOD KEY
+#super
 set $mod Mod4
 
-##======================================================================================
-##======================================================================================
-# FONT
-
+#> FONT
 #font pango:monospace 8
 font pango:Ubuntu Mono 10
 
-##======================================================================================
-##======================================================================================
-# THEME
-
-# Theme colors
+#> TEMA
 #class                  border  backgr. text    indicator
-client.focused          #7f8f9f #eeeeee #000000 #cad0c4
+client.focused          #5294e2 #5294e2 #7c818c #cad0c4
 client.focused_inactive #000000 #161616 #2D2D2D
 client.unfocused        #000000 #161616 #605e56
 client.urgent           #a5a5a5 #a5a5a5 #1E1E1E
 client.background       #161616
 
-##======================================================================================
-##======================================================================================
-# BORDERS 
-
+#> BORDAS
 #style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
-new_float normal
+new_float pixel 1
 
-#disable border window
+#desativando borda da janela
 hide_edge_borders none
 
-##======================================================================================
-##======================================================================================
-# Use Mouse+$mod to drag floating windows to their wanted position
-
+#para mover janela floating
 floating_modifier $mod
 
-##======================================================================================
-##======================================================================================
-# MY SHORTCUTS
-
+#> MEUS ATALHOS
 bindsym $mod+d exec rofi -show run
 bindsym --release Print exec xfce4-screenshooter -f
 bindsym --release Mod1+Print exec xfce4-screenshooter -w
 bindsym --release Ctrl+Print exec xfce4-screenshooter -r
 bindsym $mod+m exec touchpad_toggle.sh
 #screen layouts
+#layout de monitor padrão
 bindsym $mod+F1 exec /home/l3onix/.screenlayout/default-layout.sh
+#layout de monitor com 2 monitores
 bindsym $mod+F2 exec /home/l3onix/.screenlayout/home-layout.sh
 
-
-##======================================================================================
-##======================================================================================
-# AUTOSTART
-
+#> AUTOSTART
 exec --no-startup-id setxkbmap -model abnt2 br -option caps:swapescape
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
@@ -83,10 +51,7 @@ exec --no-startup-id compton -b
 exec_always --no-startup-id feh --bg-fill /home/l3onix/Imagens/wallpapers/dark-souls01.jpg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-##======================================================================================
-##======================================================================================
-# MULTIMEDIA KEYS
-
+#> MULTIMEDIA KEYS
 bindsym XF86AudioPlay exec "mpc toggle"
 bindsym XF86AudioStop exec "mpc stop"
 #bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
@@ -98,122 +63,69 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-muto 0 false; pactl set-sink-v
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-##======================================================================================
-##======================================================================================
-# START A TERMINAL
-
+#> TERMINAL
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xfce4-terminal
 
-##======================================================================================
-##======================================================================================
-# KILL FOCUSED WINDOW
-
+#> KILL JANELA
 bindsym $mod+Shift+q kill
 
-##======================================================================================
-##======================================================================================
-# CHANGE FOCUS
-
+#> CONTROLE DE FOCO
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-##======================================================================================
-##======================================================================================
-# ALTERNATIVELY, YOU CAN USE THE CURSOR KEYS
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-##======================================================================================
-##======================================================================================
-# MOVE DOCUSED WINDOW
-
+#> MOVIMENTAR JANELA
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-##======================================================================================
-##======================================================================================
-# ALTERNATIVELY, YOU CAN USE THE CURSOR KEYS
 
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-##======================================================================================
-##======================================================================================
-# SPLIT IN HORIZONTAL ORIENTATION
-
+#> SPLITS
+#horizontal
 bindsym $mod+b split h
-
-##======================================================================================
-##======================================================================================
-# SPLIT IN VERTICAL ORIENTATION
-
+#vertical
 bindsym $mod+v split v
 
-##======================================================================================
-##======================================================================================
-# ENTER FULLSCREEN MODE FOR THE FOCUSED CONTAINER
-
+#> FULLSCREEN
 bindsym $mod+f fullscreen toggle
 
-##======================================================================================
-##======================================================================================
-# CHANGE CONTAINER LAYOUT (STACKED, TABBEDM TOGGLE SPLIT)
-
+#> CONTROLE DE LAYOUT DE CONTAINER
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-##======================================================================================
-##======================================================================================
-# TOGGLE TILING / FLOATING
-
+#> TOGGLE TILING / FLOATING
 bindsym $mod+Shift+space floating toggle
 
-##======================================================================================
-##======================================================================================
-# FOCUS FOLLOWS CURSOR
-
+#> FOCUS CURSOR
 focus_follows_mouse no
 
-##======================================================================================
-##======================================================================================
-# CHANGE FOCUS BETWEEN TILING / FLOATING WINDOWS
-
+#> CHANGE FOCUS BETWEEN TILING / FLOATING WINDOWS
 bindsym $mod+space focus mode_toggle
 
-##======================================================================================
-##======================================================================================
-# FOCUS THE PARENT CONTAINER
-
+#> FOCUS THE PARENT CONTAINER
 bindsym $mod+a focus parent
 
-##======================================================================================
-##======================================================================================
-# FOCUS THE CHILD CONTAINER
-
+#> FOCUS THE CHILD CONTAINER
 #bindsym $mod+d focus child
 
-##======================================================================================
-##======================================================================================
-# OPEN APPLICATIONS IN FLOATING MODE
-
-for_window [class="Thunar"] floating enable sticky enable border normal
+#> ABRIR EM FLOATING 
+for_window [class="Thunar"] floating enable sticky enable
 #for_window [class="Nautilus"] floating enable sticky enable border normal
 
-##======================================================================================
-##======================================================================================
-# SWITCH TO WORKSPACE
-
+#> CONTROLE DE WORKSPACE
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -225,16 +137,11 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-##======================================================================================
-##======================================================================================
-# NAVIGATE WORKSPACES NEXT / PREVIOUS
-
+#next/previus
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-##======================================================================================
-##======================================================================================
-
+#> MOVER JANELA
 bindsym $mod+Ctrl+1 move container to workspace 1
 bindsym $mod+Ctrl+2 move container to workspace 2
 bindsym $mod+Ctrl+3 move container to workspace 3
@@ -245,10 +152,6 @@ bindsym $mod+Ctrl+7 move container to workspace 7
 bindsym $mod+Ctrl+8 move container to workspace 8
 bindsym $mod+Ctrl+9 move container to workspace 9
 bindsym $mod+Ctrl+0 move container to workspace 10
-
-##======================================================================================
-##======================================================================================
-# MOVE TO WORKSPACE WITH FOCUSED CONTAINER
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -261,21 +164,13 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-##======================================================================================
-##======================================================================================
-# RELOAD THE CONFIGURATION FILE
-
+#> RELOAD ARQUIVO DE CONFIGURAÇÃO
 bindsym $mod+Shift+c reload
 
-##======================================================================================
-##======================================================================================
-# RESTART I3WM
+#> RESTART I3WM
 bindsym $mod+Shift+r restart
 
-##======================================================================================
-##======================================================================================
-# EXIT I3WM
-
+#> EXIT I3WM
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'DESEJA REALMENTE QUITAR A SESSÃO E IR PARA O X' -b 'SIM' 'i3-msg exit'"
 
 ##======================================================================================
@@ -312,8 +207,8 @@ bindsym $mod+r mode "resize"
 # BAR SETTINGS
 
 bar {
-        status_command i3status
-        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        #status_command i3status
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
 }
 
