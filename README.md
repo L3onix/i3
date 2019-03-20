@@ -71,9 +71,10 @@
     ```
 
 13.  **Instalando Firefox-Dev**
-    ```sh
-    # pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br    
-    ```
+```sh
+# pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br    
+```
+
 
 
 14. **Instalando kernel lts**
