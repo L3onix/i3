@@ -1,54 +1,82 @@
-2018-12-15
+# Configuração de ambiente i3 no Arch Linux
 
-+ Pacotes para modo gráfico
-#pacman -S xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3status i3blocks dmenu network-manager-applet ttf-ubuntu-font-family xfce4-terminal gnome-keyring
+1. **Pacotes básicos para modo gráfico**
+    > Lista contém o servidor gráfico (*xorg*), além de um display manager (*lightdm*) e o ambiente gráfico i3wm.
+    ```sh
+    # pacman -S xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3status i3blocks dmenu network-manager-applet ttf-ubuntu-font-family xfce4-terminal gnome-keyring
+    ```    
+    > ativando modo gráfico
+    ```sh
+    # systemctl enable lightdm.service
+    ```
 
-ativando modo gráfico
-#systemctl enable lightdm.service
+2. **Instalando YAY**
+    ```sh
+    # pacman -S git
+    $ git clone https://aur.archlinux.org/yay.git
+    $ cd yay && makepkg -si
+    ```
 
-+ Instalando YAY
-#pacman -S git
-$git clone https://aur.archlinux.org/yay.git
-$cd yay && makepkg -si
+3. **Instalando audio**
+    ```sh
+    # pacman -S pulseaudio pulseaudio-alsa pavucontrol
+    ```
+
+4. **Instalando codecs64**
+    ```sh
+    $ yay codecs64
+    ```
+
+5. **Criando pastas do usuário**
+    ```sh
+    # pacman -S xdg-user-dirs
+    $ xdg-user-dirs-update
+    ```
+
+6. **Instalando compositor de telas**
+    ```sh
+    # pacman -S compton
+    ```
+
+7. **Instalando VIM**
+    ```sh
+    # pacman -S vim
+    ```
+    
+8. **Instalando launcher rofi**
+    ```sh
+    # pacman -S rofi
+    ```
+
+9. **Instalando lxappearance**
+    ```sh
+    # pacman -S lxappearance
+    ```
+
+10. **Instalando visualizador de imagem e wallpaper**
+    ```sh
+    # pacman -S feh
+    ```
+
+11. **Instalando htop**
+    ```sh
+    # pacman -S htop
+    ```
+
+12. **Instalando navegador de pastas**
+    ```sh
+    # pacman -S ranger
+    $ yay thunar
+    # pacman -S gvfs
+    ```
+
+13.  **Instalando Firefox-Dev**
+    ```sh
+    # pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br    
+    ```
 
 
-+ Instalando audio
-#pacman -S pulseaudio pulseaudio-alsa pavucontrol
-
-+ Instalando codecs64
-$yay codecs64
-
-+ Criando pastas do usuário
-#pacman -S xdg-user-dirs
-$xdg-user-dirs-update
-
-+ Instalando compositor de telas
-#pacman -S compton
-
-+ Instalando VIM
-#pacman -S vim
-
-+ Instalando launcher rofi
-#pacman -S rofi
-
-+ Instalando lxappearance
-#pacman -S lxappearance
-
-+ Instalando visualizador de imagem e wallpaper
-#pacman -S feh
-
-+ Instalando htop
-#pacman -S htop
-
-+ Instalando navegador de pastas
-#pacman -S ranger
-$yay thunar
-#pacman -S gvfs
-
-+ Instalando Firefox-Dev
-#pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br
-
-+ Instalando kernel lts
+14. **Instalando kernel lts**
 #pacman -S linux-lts
 #grub-mkconfig -o /boot/grub/grub.cfg
 #reboot
