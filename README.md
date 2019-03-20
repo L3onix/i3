@@ -71,57 +71,70 @@
     ```
 
 13.  **Instalando Firefox-Dev**
-```sh
-# pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br    
+    ```sh
+    # pacman -S firefox-developer-edition firefox-developer-edition-i18n-pt-br
 ```
 
-
-
 14. **Instalando kernel lts**
-#pacman -S linux-lts
-#grub-mkconfig -o /boot/grub/grub.cfg
-#reboot
-#pacman -Rs linux
+    ```sh
+    # pacman -S linux-lts
+    # grub-mkconfig -o /boot/grub/grub.cfg
+    # reboot
+    # pacman -Rs linux
+    ```
 
-+ Removendo tempo de espera do grub
-#vim /etc/default/grub
+15. **Removendo tempo de espera do grub**
+    ```sh
+    # vim /etc/default/grub
+    ```
+    
+17. **Instalando drivers de vídeo e bumblebee**
+    ```sh
+    # pacman -S xf86-video-intel
+    # pacman -S mesa-demos
+    # pacman -S nvidia-lts
+    # pacman -S bumblebee
+    # pacman -S primus
+    # gpasswd -a l3onix bumblebee
+    # systemctl enable bumblebee
+    # optirun glxspheres64	(para testar)
+    ```
 
-+ Instalando drivers de vídeo e bumblebee
-#pacman -S xf86-video-intel
-#pacman -S mesa-demos
-#pacman -S nvidia-lts
-#pacman -S bumblebee
-#pacman -S primus
-#gpasswd -a l3onix bumblebee
-#systemctl enable bumblebee
-#optirun glxspheres64	(para testar)
+18. **Controle de brilho**
+    ```sh
+    # pacman -S xorg-xbacklight
+    # vim /etc/X11/xorg.conf.d/20-intel.conf
+    ```
+    ```conf
+    Section "Device"
+        Identifier  "Intel Graphics" 
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+    ```
 
-+ Controle de brilho
-#pacman -S xorg-xbacklight
-#vim /etc/X11/xorg.conf.d/20-intel.conf
-----------------------------------------------
-Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection
-----------------------------------------------
-#reboot
+19. **Controle de monitor**
+    ```sh
+    # pacman -S arandr
+    ```
 
-+ Controle de monitor
-#pacman -S arandr
-
-+ Controle do touchpad
-#pacman -S xf86-input-synaptics
-#vim /usr/share/X11/xorg.conf.d/70-synaptics.conf
------------------------------------
+20. **Controle do touchpad**
+    ```sh
+    # pacman -S xf86-input-synaptics
+    # vim /usr/share/X11/xorg.conf.d/70-synaptics.conf
+    ```
+    ```conf
     Option	"TapButton1"	"1"
     Option	"TapButton2"	"3"
     Option	"TapButton3"	"2"
------------------------------------
+    ```
 
-+ Configuração de programas padrões
-#pacman -S xdg-utils
+21. **Configuração de programas padrões**
+    ```sh
+    # pacman -S xdg-utils
+    ```
 
-+ Sensores de temperatura 
-#pacman -S lm_sensors
+22. **Sensores de temperatura**
+    ```sh
+    # pacman -S lm_sensors
+    ```
