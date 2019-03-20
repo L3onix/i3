@@ -70,7 +70,7 @@
     # pacman -S gvfs
     ```
     
-13.  **Instalando Firefox-Dev**
+13.  **Instalando Firefox Developer Edition**
 
 14. **Instalando kernel lts**
     ```sh
