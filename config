@@ -32,7 +32,10 @@ hide_edge_borders none
 floating_modifier $mod
 
 #> MEUS ATALHOS
-bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec i3-dmenu-desktop
+
 bindsym --release Print exec xfce4-screenshooter -f
 bindsym --release Mod1+Print exec xfce4-screenshooter -w
 bindsym --release Ctrl+Print exec xfce4-screenshooter -r
@@ -48,7 +51,7 @@ exec --no-startup-id setxkbmap -model abnt2 br -option caps:swapescape
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-fill /home/l3onix/Imagens/wallpapers/dark-souls01.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/space_03.png
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #> MULTIMEDIA KEYS
@@ -171,7 +174,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 #> EXIT I3WM
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'DESEJA REALMENTE QUITAR A SESSÃO E IR PARA O X' -b 'SIM' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Menu de finalização' -b 'Encerrar sessão' 'i3-msg exit' -b 'Suspender' '' -b 'Hibernar' '' -b 'Desligar' 'shutdown now'"
 
 ##======================================================================================
 ##======================================================================================
