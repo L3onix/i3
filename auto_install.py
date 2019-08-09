@@ -48,7 +48,7 @@ def install_desempacotadores():
 
 def install_core():
     packages = "xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
-        i3status i3blocks dmenu network-manager-applet xfce4-terminal gnome-keyring \
+        i3status i3blocks dmenu xfce4-terminal gnome-keyring \
         xserver-xorg-input-all"
     exec_install(packages)
     os.system("systemctl enable lightdm.service")
