@@ -63,7 +63,9 @@ def install_core():
     install_touchpad()
     
 def configure():
-    os.system('cp ./* ~/.config/i3/')
+    os.system('cp ./config ~/.config/i3/')
+    os.system('cp -r ./wallpapers ~/.config/i3/')
+    os.system('cp ./i3blocks.conf ~/.config/i3/')
     os.system('i3 restart')
 
 def main():

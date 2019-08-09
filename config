@@ -51,7 +51,7 @@ exec --no-startup-id setxkbmap -model abnt2 br -option caps:swapescape
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/space_03.png
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpapers/space_03.png
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #> MULTIMEDIA KEYS
