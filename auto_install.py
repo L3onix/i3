@@ -2,10 +2,10 @@ import os
 import sys
 
 def exec_install(packages):
-    os.system("pacman -Sy --noconfirm " + packages)
+    os.system("apt install -y " + packages)
 
 def install_audio():
-    packages = "pulseaudio pulseaudio-alsa pavucontrol"
+    packages = "pulseaudio pavucontrol"
     exec_install(packages)
 
 def install_xdg():
@@ -21,26 +21,21 @@ def install_navegador_de_pastas():
     exec_install(packages)
 
 def install_navegador_web():
-    packages = "firefox-developer-edition firefox-developer-edition-i18n-pt-br"
+    packages = "firefox-esr firefox-esr-l10n-pt-br"
     exec_install(packages)
-
-def install_kernel_lts():
-    packages = "linux-lts"
-    exec_install(packages)
-    os.system("grub-mkconfig -o /boot/grub/grub.cfg")
 
 # TODO: executar instalação e configuração de bumblebee
 def install_video():
-    packages = "xf86-video-intel xorg-xbacklight arandr"
+    packages = "xserver-xorg-video-intel xbacklight arandr"
     exec_install(packages)
 
 # TODO: executar configuração de botões
 def install_touchpad():
-    packages = "xf86-input-synaptics"
+    packages = "xserver-xorg-input-synaptics"
     exec_install(packages)
 
 def install_fonts():
-    packages = "ttf-dejavu ttf-liberation ttf-droid noto-fonts"
+    packages = "ttf-dejavu ttf-nonymous-pro fonts-noto fonts-roboto"
     exec_install(packages)
 
 def install_flatpak():
@@ -52,7 +47,8 @@ def install_desempacotadores():
     exec_install(packages)
 
 def install_core():
-    packages = "xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings i3-gaps i3status i3blocks dmenu network-manager-applet ttf-ubuntu-font-family xfce4-terminal gnome-keyring"
+    packages = "xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings "+
+        "i3status i3blocks dmenu network-manager-applet xfce4-terminal gnome-keyring"
     exec_install(packages)
     os.system("systemctl enable lightdm.service")
 
